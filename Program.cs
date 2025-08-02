@@ -18,26 +18,31 @@ namespace ToDoList
         {
             List<TodoItem> todoList = new List <TodoItem>();
             MainProj p = new MainProj();
-            Console.WriteLine("Welcome to the to do list");
+            Console.WriteLine("Welcome!");
             Console.WriteLine("would you like to signin or create an account");
 
             Console.WriteLine("Press 1 to signin or 2 to create an account");
             string choice = Console.ReadLine();
-            if (choice =="1")
+            if (choice == "1")
             {
-               //TodoItem signin= new TodoItem();
-               // po.TodoItem1();
+                SignIn signin = new SignIn();
+                var signincheck = signin.SignInCheck();
+                foreach (var index in signincheck.Tasks)
+                {
+                    Console.WriteLine(index);
+
+                }
+                Console.WriteLine("you are logged in");
             }
             else if (choice == "2")
             {
                // var accountCreationHandler = new CreateAccount();
              var accountInstance= CreateAccount.UserAccount();
                 Console.WriteLine($"Account details: ID = {accountInstance.id} Name = {accountInstance.name}, Password = {accountInstance.password}");
-
             }
             else
             {
-
+              
             }
         }
     }
