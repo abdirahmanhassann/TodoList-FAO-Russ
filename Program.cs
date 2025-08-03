@@ -27,22 +27,20 @@ namespace ToDoList
             {
                 SignIn signin = new SignIn();
                 var signincheck = signin.SignInCheck();
-                foreach (var index in signincheck.Tasks)
-                {
-                    Console.WriteLine(index);
-
-                }
                 Console.WriteLine("you are logged in");
+                DisplayAllTasks displayAllTasks = new DisplayAllTasks();
+                 displayAllTasks.WelcomePage(signincheck);
             }
             else if (choice == "2")
             {
                // var accountCreationHandler = new CreateAccount();
              var accountInstance= CreateAccount.UserAccount();
                 Console.WriteLine($"Account details: ID = {accountInstance.id} Name = {accountInstance.name}, Password = {accountInstance.password}");
+               
             }
             else
             {
-              
+                Console.WriteLine("Please enter either 1 or 2");
             }
         }
     }

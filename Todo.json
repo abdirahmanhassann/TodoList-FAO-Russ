@@ -18,7 +18,18 @@
     "Id": 2,
     "Username": "abdirahman1",
     "Password": "abdi",
-    "Tasks": [],
+    "Tasks": [
+      {
+        "Title": "Buy groceries",
+        "Description": "Milk, eggs, and bread",
+        "IsCompleted": false
+      },
+      {
+        "Title": "Finish homework",
+        "Description": "Math and science assignments",
+        "IsCompleted": true
+      }
+    ],
     "Title": "",
     "Description": "",
     "IsCompleted": false

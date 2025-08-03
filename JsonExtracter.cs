@@ -36,6 +36,12 @@ namespace ToDoList
             
 
         }
+        //public List<Task> GetTasks()
+        //{
+        //    string jsonPath = @"C:\Users\abdi\source\repos\ToDoList\ToDoList\Todo.json";
+        //    string json = File.ReadAllText(jsonPath);
+        //    List<TodoItem> todos = JsonSerializer.Deserialize<List<TodoItem>>(json);
+        //}
 
     }
 }
