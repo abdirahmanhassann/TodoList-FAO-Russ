@@ -28,6 +28,11 @@
         "Title": "d",
         "Description": "d",
         "IsCompleted": false
+      },
+      {
+        "Title": "New Task",
+        "Description": "This task is a new task",
+        "IsCompleted": false
       }
     ],
     "Title": "",
@@ -63,9 +68,80 @@
   },
   {
     "Id": 4,
-    "Username": "abdirahman5",
+    "Username": "abdirahman123",
     "Password": "abdi",
     "Tasks": [],
+    "Title": null,
+    "Description": null,
+    "IsCompleted": false
+  },
+  {
+    "Id": 5,
+    "Username": "abdirahman33",
+    "Password": "abdi",
+    "Tasks": [],
+    "Title": null,
+    "Description": null,
+    "IsCompleted": false
+  },
+  {
+    "Id": 6,
+    "Username": "abdirahman34",
+    "Password": "abdi",
+    "Tasks": [],
+    "Title": null,
+    "Description": null,
+    "IsCompleted": false
+  },
+  {
+    "Id": 7,
+    "Username": "abdirahman1333",
+    "Password": "abdi",
+    "Tasks": [],
+    "Title": null,
+    "Description": null,
+    "IsCompleted": false
+  },
+  {
+    "Id": 8,
+    "Username": "abdirahman555",
+    "Password": "abdi",
+    "Tasks": [
+      {
+        "Title": "fjdklsjfkl",
+        "Description": "fdjdj",
+        "IsCompleted": false
+      },
+      {
+        "Title": "hdfjks",
+        "Description": "fshkjfsdfkjhdsa",
+        "IsCompleted": false
+      }
+    ],
+    "Title": null,
+    "Description": null,
+    "IsCompleted": false
+  },
+  {
+    "Id": 9,
+    "Username": "abdirah",
+    "Password": "abdi",
+    "Tasks": [],
+    "Title": null,
+    "Description": null,
+    "IsCompleted": false
+  },
+  {
+    "Id": 10,
+    "Username": "abdi",
+    "Password": "abdi",
+    "Tasks": [
+      {
+        "Title": "hfdjk",
+        "Description": "fh",
+        "IsCompleted": false
+      }
+    ],
     "Title": null,
     "Description": null,
     "IsCompleted": false

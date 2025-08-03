@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ToDoList
 {
-    public class CreateAccount
+     public class CreateAccount
     {
         public static TodoItem UserAccount()
         {
@@ -58,11 +58,11 @@ namespace ToDoList
 
             name = chooseusername();
             password = choosepassword();
-            id = jsondata.Count+1;
+            id = jsondata.Count;
 
             JsonHandler jsonhandler = new JsonHandler();
-            jsonhandler.AddUserIntoJsonFile(id,name,password);
-            return null;
+            var user=jsonhandler.AddUserIntoJsonFile(id,name,password);
+            return user;
             }
 
             

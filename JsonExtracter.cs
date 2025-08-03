@@ -17,7 +17,7 @@ namespace ToDoList
         List<TodoItem> todos = JsonSerializer.Deserialize <List<TodoItem>> (json);
             return todos;   
         }
-        public List<TodoItem> AddUserIntoJsonFile(int id,string Username,string Password)
+        public TodoItem AddUserIntoJsonFile(int id,string Username,string Password)
         {
             var jsonValues = Readjson();
             TodoItem newUser = new TodoItem
@@ -34,7 +34,8 @@ namespace ToDoList
 
             jsonValues.Add(newUser);
             File.WriteAllText(JsonPath, JsonSerializer.Serialize(jsonValues, new JsonSerializerOptions { WriteIndented = true }));
-            return jsonValues;
+            jsonValues = Readjson();
+            return newUser;
 
 
 

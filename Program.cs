@@ -19,11 +19,15 @@ namespace ToDoList
             List<TodoItem> todoList = new List <TodoItem>();
             MainProj p = new MainProj();
             ManageTasks manageTasks = new ManageTasks();
+            string choice="";
+            while (choice != "e")
+            {
+
             Console.WriteLine("Welcome!");
             Console.WriteLine("would you like to signin or create an account");
 
-            Console.WriteLine("Press 1 to signin or 2 to create an account");
-            string choice = Console.ReadLine();
+            Console.WriteLine("Press 1 to signin, 2 to create an account, or e to exit");
+            choice = Console.ReadLine();
             if (choice == "1")
             {
                 SignIn signin = new SignIn();
@@ -42,6 +46,7 @@ namespace ToDoList
             else
             {
                 Console.WriteLine("Please enter either 1 or 2");
+            }
             }
         }
     }

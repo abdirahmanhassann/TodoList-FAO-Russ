@@ -18,8 +18,9 @@ namespace ToDoList
 
                 Console.WriteLine("To view all your tasks, press: 1");
                 Console.WriteLine("To add a task, press: 2");
-                Console.WriteLine("To exit, press: e");
+                Console.WriteLine("To Logout, press: e");
                 choice= Console.ReadLine();
+
                 if (choice == "1")
                 {
                     if (user==null)
@@ -31,7 +32,10 @@ namespace ToDoList
 
                         foreach (var index in user.Tasks)
                         {
+                            Console.WriteLine("-----------------------------");
+                            Console.Write("Title: ");
                             Console.WriteLine(index.Title);
+                            Console.Write("Description: ");
                             Console.WriteLine(index.Description);
                             Console.Write("Status: ");
                             if (index.IsCompleted == true)
@@ -43,6 +47,7 @@ namespace ToDoList
                             {
                                 Console.WriteLine("Incomplete");
                             }
+                            Console.WriteLine("-----------------------------");
                         }
                     }
                 }
@@ -53,6 +58,15 @@ namespace ToDoList
                 else
                 {
 
+                }
+                JsonHandler jsonHandler =new JsonHandler();
+                var json = jsonHandler.Readjson();
+                foreach (var index in json)
+                {
+                    if (index.Id == user.Id)
+                    {
+                        user = index;
+                    }
                 }
             }
         }
@@ -67,14 +81,16 @@ namespace ToDoList
             description=Console.ReadLine();
             JsonHandler jsonHandler = new JsonHandler();
             var json = jsonHandler.Readjson();
+
             TaskItem task = new TaskItem
             {
                 Title = title,
                 Description = description,
                 IsCompleted = false
             };
-            json[user.Id].Tasks.Add(task);
+            json[json.Count-1].Tasks.Add(task);
             File.WriteAllText(jsonHandler.JsonPath, JsonSerializer.Serialize(json, new JsonSerializerOptions { WriteIndented = true }));
+            json = jsonHandler.Readjson();
         }
     }
 }
