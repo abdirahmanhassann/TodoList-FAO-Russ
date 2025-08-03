@@ -18,6 +18,7 @@ namespace ToDoList
         {
             List<TodoItem> todoList = new List <TodoItem>();
             MainProj p = new MainProj();
+            ManageTasks manageTasks = new ManageTasks();
             Console.WriteLine("Welcome!");
             Console.WriteLine("would you like to signin or create an account");
 
@@ -28,14 +29,14 @@ namespace ToDoList
                 SignIn signin = new SignIn();
                 var signincheck = signin.SignInCheck();
                 Console.WriteLine("you are logged in");
-                DisplayAllTasks displayAllTasks = new DisplayAllTasks();
-                 displayAllTasks.WelcomePage(signincheck);
+                 ManageTasks.WelcomePage(signincheck);
             }
             else if (choice == "2")
             {
                // var accountCreationHandler = new CreateAccount();
              var accountInstance= CreateAccount.UserAccount();
-                Console.WriteLine($"Account details: ID = {accountInstance.id} Name = {accountInstance.name}, Password = {accountInstance.password}");
+                Console.WriteLine("Account created.");
+                 ManageTasks.WelcomePage(accountInstance);
                
             }
             else

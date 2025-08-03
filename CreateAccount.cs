@@ -13,7 +13,7 @@ namespace ToDoList
 {
     public class CreateAccount
     {
-        public static (int id, string name, string password)  UserAccount()
+        public static TodoItem UserAccount()
         {
             bool validusername = false;
             int id;
@@ -62,7 +62,7 @@ namespace ToDoList
 
             JsonHandler jsonhandler = new JsonHandler();
             jsonhandler.AddUserIntoJsonFile(id,name,password);
-            return (id, name, password);
+            return null;
             }
 
             

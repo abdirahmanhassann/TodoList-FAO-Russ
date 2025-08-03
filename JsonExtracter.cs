@@ -4,44 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ToDoList
 {
     public class JsonHandler
     {
+        public string JsonPath= @"C:\Users\abdi\source\repos\ToDoList\ToDoList\Todo.json";
         public List<TodoItem> Readjson()
         {
-            string jsonPath = @"C:\Users\abdi\source\repos\ToDoList\ToDoList\Todo.json";
-            string json = File.ReadAllText(jsonPath);
+            string json = File.ReadAllText(JsonPath);
         List<TodoItem> todos = JsonSerializer.Deserialize <List<TodoItem>> (json);
             return todos;   
         }
         public List<TodoItem> AddUserIntoJsonFile(int id,string Username,string Password)
         {
-            string jsonPath = @"C:\Users\abdi\source\repos\ToDoList\ToDoList\Todo.json";
             var jsonValues = Readjson();
-            var newAccount = new TodoItem
+            TodoItem newUser = new TodoItem
             {
                 Id = id,
                 Username = Username,
                 Password = Password,
-                Title = "",
-                Description = "",
+                Tasks = new List<TaskItem>(), // empty tasks list
+                Title = null,
+                Description = null,
                 IsCompleted = false
             };
 
-            jsonValues.Add(newAccount);
-            File.WriteAllText(jsonPath, JsonSerializer.Serialize(jsonValues, new JsonSerializerOptions { WriteIndented = true }));
+
+            jsonValues.Add(newUser);
+            File.WriteAllText(JsonPath, JsonSerializer.Serialize(jsonValues, new JsonSerializerOptions { WriteIndented = true }));
             return jsonValues;
-            
+
+
+
 
         }
-        //public List<Task> GetTasks()
-        //{
-        //    string jsonPath = @"C:\Users\abdi\source\repos\ToDoList\ToDoList\Todo.json";
-        //    string json = File.ReadAllText(jsonPath);
-        //    List<TodoItem> todos = JsonSerializer.Deserialize<List<TodoItem>>(json);
-        //}
+
 
     }
 }
